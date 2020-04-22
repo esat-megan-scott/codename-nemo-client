@@ -1,36 +1,13 @@
 {{#each surveys as |survey|}}
   <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all">
     <h2>{{survey.question}}</h2>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option1" id="option1">
-      <label class="form-check-label" for="option1">
-        {{survey.option1}}
-      </label>
-    </div>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option2" id="option2">
-      <label class="form-check-label" for="option2">
-        {{survey.option2}}
-      </label>
-    </div>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option3" id="option3">
-      <label class="form-check-label" for="option3">
-        {{survey.option3}}
-      </label>
-    </div>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option4" id="option4">
-      <label class="form-check-label" for="option4">
-        {{survey.option4}}
-      </label>
-    </div>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option5" id="option5">
-      <label class="form-check-label" for="option5">
-        {{survey.option5}}
-      </label>
-    </div>
+    <ol>
+      <li>{{survey.option1}}</li>
+      <li>{{survey.option2}}</li>
+      <li>{{survey.option3}}</li>
+      <li>{{survey.option4}}</li>
+      <li>{{survey.option5}}</li>
+    </ol>
   <button data-id="{{survey._id}}" class='btn btn-success'> Update Survey </button>
   <button data-id="{{survey._id}}" class='btn btn-danger'> Delete Survey </button>
   </section>
