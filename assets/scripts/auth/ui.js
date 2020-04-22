@@ -7,7 +7,9 @@ const store = require('../store')
 const signUpSuccess = function () {
   $('.alert-success').removeClass('hide')
   $('.alert-success').text('Signed-up Successfully!')
+  // $('#sign-up')[0].reset()
   $('#sign-up').trigger('reset')
+  // document.getElementById('sign-up').reset()
 }
 
 const signUpFailure = function () {
@@ -23,6 +25,8 @@ const signInSuccess = function (data) {
   $('#cpb').removeClass('hide')
   $('#sub').addClass('hide')
   $('#sib').addClass('hide')
+  $('.item-group').removeClass('hide')
+  $('.info').addClass('hide')
   store.user = data.user
   $('#sign-in').trigger('reset')
 }
@@ -36,10 +40,14 @@ const signInFailure = function () {
 const signOutSuccess = function () {
   $('.alert-success').removeClass('hide')
   $('.alert-success').text('Signed-out Successfully!')
+  $('.item-group').addClass('hide')
+  $('#content').addClass('hide')
   $('#sign-out').addClass('hide')
   $('#cpb').addClass('hide')
   $('#sub').removeClass('hide')
   $('#sib').removeClass('hide')
+  $('#create-item').addClass('hide')
+  $('.info').removeClass('hide')
 }
 
 const signOutFailure = function () {

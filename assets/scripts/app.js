@@ -3,6 +3,12 @@
 const authEvents = require('./auth/events.js')
 const surveyEvents = require('./survey/events.js')
 
+// Pops up the create survey form.
+const cib = function () {
+  $('#create-item').removeClass('hide')
+  $('#content').addClass('hide')
+}
+
 $(() => {
   // sign up for new user.
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -19,6 +25,9 @@ $(() => {
   // clear the alerts from the page.
   $('body').on('click', authEvents.clear)
 
+  // load the create survey form.
+  $('#cib').on('click', cib)
+
   // surveys related events.
-  // surveyEvents.addHandlers()
+  surveyEvents.addHandlers()
 })
