@@ -1,11 +1,33 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
+const authEvents = require('./auth/events.js')
+const surveyEvents = require('./survey/events.js')
 
-// use require without a reference to ensure a file is bundled
-// require('./example')
+// Pops up the create survey form.
+const cib = function () {
+  $('#create-item').removeClass('hide')
+  $('#content').addClass('hide')
+}
 
 $(() => {
-  // your JS code goes here
+  // sign up for new user.
+  $('#sign-up').on('submit', authEvents.onSignUp)
+
+  // sign in for registered user.
+  $('#sign-in').on('submit', authEvents.onSignIn)
+
+  // sign out for signed-in user.
+  $('#sign-out').on('click', authEvents.onSignOut)
+
+  // change password for registered user.
+  $('#change-password').on('submit', authEvents.onChangePassword)
+
+  // clear the alerts from the page.
+  $('body').on('click', authEvents.clear)
+
+  // load the create survey form.
+  $('#cib').on('click', cib)
+
+  // surveys related events.
+  surveyEvents.addHandlers()
 })
