@@ -1,48 +1,36 @@
 {{#each surveys as |survey|}}
   <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all">
-    <h2>Survey Title: {{limit survey.question 15}}</h2>
-    <ul>
-      <li>Description: {{#if survey.description}}
-      {{survey.description}}
-     {{else}}
-      No description provided.
-    {{/if}}</li>
-    <li>Option One: {{#if survey.option1}}
-      {{survey.option1}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Option Two: {{#if survey.option2}}
-      {{survey.option2}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Option Three: {{#if survey.option3}}
-      {{survey.option3}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Option Four: {{#if survey.option4}}
-      {{survey.option4}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Option Five: {{#if survey.option5}}
-      {{survey.option5}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Due date:{{#if survey.due_on}}
-      {{survey.due_on}}
-    {{else}}
-      No due date provided.
-    {{/if}}</li>
-    <li>Complete status: {{#if survey.completed}}
-      {{survey.completed}}
-    {{else}}
-      No complete status provided.
-    {{/if}}</li>
-  </ul>
+    <h2>{{survey.question}}</h2>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" name="" value="option1" id="option1">
+      <label class="form-check-label" for="option1">
+        {{survey.option1}}
+      </label>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" name="" value="option2" id="option2">
+      <label class="form-check-label" for="option2">
+        {{survey.option2}}
+      </label>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" name="" value="option3" id="option3">
+      <label class="form-check-label" for="option3">
+        {{survey.option3}}
+      </label>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" name="" value="option4" id="option4">
+      <label class="form-check-label" for="option4">
+        {{survey.option4}}
+      </label>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" name="" value="option5" id="option5">
+      <label class="form-check-label" for="option5">
+        {{survey.option5}}
+      </label>
+    </div>
   <!-- <button data-id="{{survey._id}}" class='btn btn-success'> Update Survey </button>
   <button data-id="{{survey._id}}" class='btn btn-danger'> Delete Survey </button> -->
   </section>
