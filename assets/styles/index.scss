@@ -1,1 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
+
+.hide  {
+  display: none;
+}
+
+body {
+  background-image: url('https://www.helpscout.com/static/7b73e261476e6d23f1e22fc18d7b2265/483a9/Customer-Survey.webp');
+  color: black;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 5rem 0 1rem;
+}
+
+.signs {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  color: white;
+  font-family: 'Bad Script', cursive;
+  font-size: 62px;
+  margin: 21px ;
+  text-align: center;
+}
