@@ -12,6 +12,36 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Surveys</h1>
+
+      <form id="sign-up">
+        <h3 id="sign-up-text">Sign Up</h3>
+          <div class="col col-sm">
+            <input type="text" class="form-control form-control-lg" name="credentials[email]" placeholder="Email">
+          </div>
+          <div class="col col-sm">
+            <input type="password" class="form-control form-control-lg" name="credentials[password]" placeholder="Password">
+          </div>
+          <div class="col col-sm">
+            <input type="password" class="form-control form-control-lg" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          </div>
+          <div class="col">
+            <input class="btn btn-primary btn-lg" type="submit" value="Sign Up">
+          </div>
+      </form>
+
+      <form id="login">
+        <h3 id="login-text">Login</h3>
+        <div class="col col-sm">
+          <input type="text" class="form-control form-control-lg" name="credentials[email]" placeholder="Email">
+        </div>
+        <div class="col col-sm">
+          <input type="password" class="form-control form-control-lg" name="credentials[password]" placeholder="Password">
+        </div>
+        <div class="col">
+          <input class="btn btn-primary btn-lg" type="submit" value="Login">
+        </div>
+      </form>
+
     </body>
 </html>
