@@ -8,7 +8,7 @@
       </label>
     </div>
     <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option2" id="option2">
+    <input class="form-check-input" type="radio" name="answer" value="option2" id="option2">
       <label class="form-check-label" for="option2">
         {{survey.option2}}
       </label>
@@ -26,12 +26,12 @@
       </label>
     </div>
     <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option5" id="option5">
-      <label class="form-check-label" for="option5">
+    <input class="form-check-input" type="radio" name="answer" value="option5" >
+      <button class="form-check-label btn-warning" for="option5" id="option5">
         {{survey.option5}}
-      </label>
+      </button>
     </div>
-  <button data-id="{{survey._id}}" class='btn btn-success'> Submit </button>
+  <button data-id="{{survey._id}}" class='btn btn-warning'> Submit </button>
   </section>
 
 {{/each}}

@@ -13,7 +13,7 @@ const showItemsSuccess = function (data) {
   $('#create-item').addClass('hide')
   $('#content').removeClass('hide')
   $('#content').text(' ')
-  // store.surveys = data.surveys
+  store.surveys = data.surveys
   // console.log(data.surveys)
   const showItemsHtml = showItemsTemplate({ surveys: data.surveys })
   $('.content').append(showItemsHtml)
