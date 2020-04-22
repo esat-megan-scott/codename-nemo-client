@@ -15,7 +15,9 @@
 
 
     <h1>Welcome to the Surveys!</h1>
+
     <!-- !!! Info for welcome page !!!-->
+
     <div class="breadcrumb info">
     <h5> Here, you can create and customize any survey of your choice with
       up to five respond options per survey. You can also update or delete any
@@ -24,7 +26,9 @@
       sign-in to access them.
     </h5>
     </div>
+
     <!-- !!! Alerts !!!-->
+
      <div class="hide alert alert-success" role="alert">
      A simple success alert
      </div>
@@ -32,52 +36,84 @@
      A simple danger alert
      </div>
   <div class="btn-group signs">
+
     <!-- !!! Sign-up form & Bar !!!-->
+
     <div class="group sub">
      <div id="sub" class="btn">
-       <button class="btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
-         Sign-up!
+       <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+         Sign Up
        </button>
-       <div class="dropdown-menu">
-         <form  id="sign-up" class="px-4 py-3">
-           <div class="form-group">
-             <label>Email address</label>
-             <input type="text" name="credentials[email]" class="form-control" placeholder="email@example.com">
-           </div>
-           <div class="form-group">
-             <label for="exampleDropdownFormPassword1">Password</label>
-             <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
-           </div>
-           <div class="form-group">
-             <label for="exampleDropdownFormPassword1">Confirmation</label>
-             <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Password">
-           </div>
-           <button type="submit" class="btn btn-primary">Sign up</button>
-         </form>
-       </div>
+       <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form  id="sign-up" class="px-4 py-3">
+                  <div class="form-group">
+                    <label>Email address</label>
+                    <input type="text" name="credentials[email]" class="form-control" placeholder="email@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleDropdownFormPassword1">Password</label>
+                    <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleDropdownFormPassword1">Confirmation</label>
+                    <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
      </div>
 
     <!-- !!! Sign-in form & Bar !!!-->
+
      <div id="sib" class="btn">
-       <button class="btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
-         Sign-in!
+       <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+         Sign In
        </button>
-       <div class="dropdown-menu">
-         <form id="sign-in" class="px-4 py-3">
-           <div class="form-group">
-             <label>Email address</label>
-             <input type="text" name="credentials[email]" class="form-control" placeholder="email@example.com">
-           </div>
-           <div class="form-group">
-             <label>Password</label>
-             <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
-           </div>
-            <button type="submit" class="btn btn-primary" value="Sign in!">Sign in</button>
-         </form>
-       </div>
+       <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Sign In</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in" class="px-4 py-3">
+                <div class="form-group">
+                  <label>Email address</label>
+                  <input type="text" name="credentials[email]" class="form-control" placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">Sign In</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>
-</div>
+      </div>
+      </div>
+    </div>
+
      <div class="btn-group breadcrumb item-group hide">
         <button id="all-items" class="btn-secondary btn-lg" type="submit">
           Show All Surveys
@@ -88,11 +124,15 @@
         <button id="cib" class="btn-secondary btn-lg" type="submit">
           Create New Survey
         </button>
+
         <!-- !!! Sign-out button !!!-->
+
         <button id="sign-out" class="btn-secondary btn-lg hide" type="submit">
           Sign-out
         </button>
+
         <!-- !!! Change-password form & Bar !!!-->
+
          <div id="cpb" class="btn hide">
            <button class="btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
              Change Password
@@ -115,6 +155,7 @@
 
 
     <!-- !!! Create Items form !!!-->
+
     <form id="create-item" class="container px-4 py-3 hide">
       <div class="form-group">
         <label>Survey Question</label>
