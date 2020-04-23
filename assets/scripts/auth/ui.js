@@ -6,7 +6,7 @@ const store = require('../store')
 
 const signUpSuccess = function () {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Signed-up Successfully!')
+  $('.alert-success').text('Signed up successfully')
   // $('#sign-up')[0].reset()
   $('#sign-up').trigger('reset')
   $('#sign-up-modal').modal('hide')
@@ -15,13 +15,13 @@ const signUpSuccess = function () {
 
 const signUpFailure = function () {
   $('.alert-danger').removeClass('hide')
-  $('.alert-danger').text('Error on Sing-up!')
+  $('.alert-danger').text('Error when signing up')
   $('#sign-up').trigger('reset')
 }
 
 const signInSuccess = function (data) {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Signed-in Successfully!')
+  $('.alert-success').text('Signed in successfully')
   $('#sign-out').removeClass('hide')
   $('#cpb').removeClass('hide')
   $('#sub').addClass('hide')
@@ -35,13 +35,13 @@ const signInSuccess = function (data) {
 
 const signInFailure = function () {
   $('.alert-danger').removeClass('hide')
-  $('.alert-danger').text('Error on Sign-in!')
+  $('.alert-danger').text('Error when signing in')
   $('#sign-in').trigger('reset')
 }
 
 const signOutSuccess = function () {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Signed-out Successfully!')
+  $('.alert-success').text('Signed out successfully')
   $('.item-group').addClass('hide')
   $('#content').addClass('hide')
   $('#sign-out').addClass('hide')
@@ -54,18 +54,18 @@ const signOutSuccess = function () {
 
 const signOutFailure = function () {
   $('.alert-danger').removeClass('hide')
-  $('.alert-danger').text('Error on Sign-out!')
+  $('.alert-danger').text('Error when signing out')
 }
 
 const changePasswordSuccess = function () {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Password changed Successfully!')
+  $('.alert-success').text('Password changed')
   $('#change-password').trigger('reset')
 }
 
 const changePasswordFailure = function () {
   $('.alert-danger').removeClass('hide')
-  $('.alert-danger').text('Error on changing password!')
+  $('.alert-danger').text('Failed to change password')
   $('#change-password').trigger('reset')
 }
 
