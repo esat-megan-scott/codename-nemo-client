@@ -1,46 +1,26 @@
-<div class="modal fade" id="update-survey-button" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Update Survey</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="survey-update" data-id="{{survey._id}}">
-          <form id="create-survey" class="px-4 py-3 hide">
-            <div class="form">
-              <label>Survey Question</label>
-              <input type="text" name="survey[question]" placeholder="Title" value="{{survey.question}}">
-            </div>
-            <div class="form">
-            <div class="form-group">
-              <label>Option 1</label>
-              <input type="text" name="survey[option1]" placeholder="New Option" class="form-control" value="{{survey.option1}}" >
-            </div>
-            <div class="form-group">
-              <label>Option 2</label>
-              <input type="text" name="survey[option2]" placeholder="New Option" class="form-control" value="{{survey.option2}}" >
-            </div>
-            <div class="form-group">
-              <label>Option 3</label>
-              <input type="text" name="survey[option3]" placeholder="New Option" class="form-control" value="{{survey.option3}}" >
-            </div>
-            <div class="form-group">
-              <label>Option 4</label>
-              <input type="text" name="survey[option4]" placeholder="New Option" class="form-control" value="{{survey.option4}}" >
-            </div>
-            <div class="form-group">
-              <label>Option 5</label>
-              <input type="text" name="survey[option5]" placeholder="New Option" class="form-control" value="{{survey.option5}}" >
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-secondary" value="Update-Option!">Update Survey</button>
-            </div>
-          </form>
-        </form>
-      </div>
+<form class="survey-update" data-id="{{survey._id}}">
+  <form id="create-survey" class="px-4 py-3 hide">
+    <div class="form">
+      <label>Survey Title</label>
+      <input type="text" name="survey[question]" placeholder="Title" value="{{survey.title}}">
     </div>
-  </div>
-</div>
+    <div class="form">
+    <div class="form-group">
+      <label>Survey Question</label>
+      <input type="text" name="survey[question]" placeholder="New Question" class="form-control" value="{{survey.question}}" >
+    </div>
+    <div class="form-group">
+      <label>Option 1</label>
+      <input type="text" name="survey[option1]" placeholder="New Option" class="form-control" value="{{survey.options.[0]}}" >
+    </div>
+    <div class="form-group">
+      <label>Option 2</label>
+      <input type="text" name="survey[option2]" placeholder="New Option" class="form-control" value="{{survey.options.[1]}}" >
+    </div>
+    <div class="form-group">
+      <label>Option 3</label>
+      <input type="text" name="survey[option3]" placeholder="New Option" class="form-control" value="{{survey.options.[2]}}" >
+    </div>
+     <button type="submit" class="btn btn-secondary" value="Update-Option!">Submit!</button>
+  </form>
+</form>

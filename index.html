@@ -162,64 +162,37 @@
 
     <!-- !!! Create Items form !!!-->
 
-    <div class="modal fade" id="create-survey-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Create a Survey</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="create-item" class="container px-4 py-3 hide">
-              <div class="form-group">
-                <label>Survey Question</label>
-                <input type="text" name="survey[question]" placeholder="What's your favorite animal?" class="form-control col-12 box" required>
-              </div>
-              <div class="form-group">
-                <label>Survey Description</label>
-                <input type="text" name="survey[description]" placeholder="Description" class="form-control">
-              </div>
-              <div class="form-group">
-                <label>Option 1</label>
-                <input type="text" name="survey[option1]" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label>Option 2</label>
-                <input type="text" name="survey[option2]" class="form-control" required>
-              </div>
-              <div class="form-group">
-                <label>Option 3</label>
-                <input type="text" name="survey[option3]" class="form-control" >
-              </div>
-              <div class="form-group">
-                <label>Option 4</label>
-                <input type="text" name="survey[option4]" class="form-control" >
-              </div>
-              <div class="form-group">
-                <label>Option 5</label>
-                <input type="text" name="survey[option5]" class="form-control" >
-              </div>
-              <!-- <div class="form-group">
-                <label>Due Date</label>
-                <input type="date" name="survey[due_on]" placeholder="Date" class="form-control">
-              </div>
-              <div class="form-group">
-                <label>Final Results</label>
-                <input type="text" name="survey[completed]" placeholder="Complete Status" class="form-control">
-              </div> -->
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" value="Create-Item!">Create Survey</button>
-              </div>
-            </form>
-          </div>
-        </div>
+    <form id="create-item" class="container px-4 py-3 hide">
+      <div class="form-group">
+        <label>Survey Title</label>
+        <input type="text" name="survey[title]" placeholder="Title" class="form-control col-12 box" >
       </div>
-    </div>
-
-
-
+      <div class="form-group">
+        <label>Survey Question</label>
+        <input type="text" name="survey[question]" placeholder="Description" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Option 1</label>
+        <input type="text" name="survey[option1]" placeholder="New Item" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label>Option 2</label>
+        <input type="text" name="survey[option2]" placeholder="New Item" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label>Option 3</label>
+        <input type="text" name="survey[option3]" placeholder="New Item" class="form-control" >
+      </div>
+      <!-- <div class="form-group">
+        <label>Option 4</label>
+        <input type="text" name="survey[option4]" placeholder="New Item" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label>Option 5</label>
+        <input type="text" name="survey[option5]" placeholder="New Item" class="form-control" >
+      </div> -->
+       <button type="submit" class="btn btn-primary" value="Create-Item!">Create Survey!</button>
+    </form>
 
    <main>
       <div id="content" class="content hide"></div>

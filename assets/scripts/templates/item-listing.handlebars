@@ -1,37 +1,21 @@
 {{#each surveys as |survey|}}
-  <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all">
-    <h2>{{survey.question}}</h2>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option1" id="option1">
-      <label class="form-check-label" for="option1">
-        {{survey.option1}}
-      </label>
-    </div>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option2" id="option2">
-      <label class="form-check-label" for="option2">
-        {{survey.option2}}
-      </label>
-    </div>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option3" id="option3">
-      <label class="form-check-label" for="option3">
-        {{survey.option3}}
-      </label>
-    </div>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option4" id="option4">
-      <label class="form-check-label" for="option4">
-        {{survey.option4}}
-      </label>
-    </div>
-    <div class="form-check">
-    <input class="form-check-input" type="radio" name="" value="option5" id="option5">
-      <label class="form-check-label" for="option5">
-        {{survey.option5}}
-      </label>
-    </div>
-  <button data-id="{{survey._id}}" class='btn btn-success'> Submit </button>
-  </section>
+ <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all">
+    <h2>{{survey.title}}</h2>
+    <p> Question: {{survey.question}}</p>
+    {{#if survey.answer}}
+    <p>add something here to show the results!
+    but first write show anwers api, and try to add some variable
+    to seperate if the survey.answer is posted the signed-in user.
+    Because know it accepts any answer and do not allow the user who didn't
+    submit an answer yet, if there is alreay an answer for the question.</p>
+    {{else}}
+    <form>
+    <input type="radio" name="{{survey._id}}" value="{{survey.options.[0]}}"> {{survey.options.[0]}}
+    <input type="radio" name="{{survey._id}}" value="{{survey.options.[1]}}"> {{survey.options.[1]}}
+    <input type="radio" name="{{survey._id}}" value="{{survey.options.[2]}}"> {{survey.options.[2]}}
+    <button type="submit" value="submit" class="btn btn-warning take-survey">Submit </button>
+  </form>
+  {{/if}}
+ </section>
 
 {{/each}}
