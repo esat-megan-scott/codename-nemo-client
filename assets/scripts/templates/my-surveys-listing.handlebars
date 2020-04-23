@@ -1,12 +1,12 @@
 {{#each surveys as |survey|}}
   <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all">
-    <h2>{{survey.question}}</h2>
+    <h2>{{survey.title}}</h2>
+    <p>{{survey.question}}</p>
+
     <ol>
-      <li>{{survey.option1}}</li>
-      <li>{{survey.option2}}</li>
-      <li>{{survey.option3}}</li>
-      <li>{{survey.option4}}</li>
-      <li>{{survey.option5}}</li>
+      <li>{{survey.options.[0]}}</li>
+      <li>{{survey.options.[1]}}</li>
+      <li>{{survey.options.[2]}}</li>
     </ol>
   <button data-id="{{survey._id}}" class='btn btn-success'> Update Survey </button>
   <button data-id="{{survey._id}}" class='btn btn-danger'> Delete Survey </button>

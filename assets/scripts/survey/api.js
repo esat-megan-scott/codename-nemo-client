@@ -28,7 +28,7 @@ const showMyItems = function () {
 }
 
 // Creates new list for signed-in user.
-const createItem = function (data) {
+const createItem = function (data, options) {
   return $.ajax({
     url: config.apiUrl + '/surveys',
     method: 'POST',
@@ -62,10 +62,27 @@ const updateItem = function (id, data) {
   })
 }
 
+const vote = function (surveyId, radio) {
+  return $.ajax({
+    url: config.apiUrl + '/answers',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'answer': {
+        'choice': radio,
+        'question': surveyId
+      }
+    }
+  })
+}
+
 module.exports = {
   showItems,
   showMyItems,
   createItem,
   deleteItem,
-  updateItem
+  updateItem,
+  vote
 }

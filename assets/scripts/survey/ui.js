@@ -79,6 +79,13 @@ const updateItemSuccess = function (data) {
   $('.content').append(showMySurveysHtml)
 }
 
+const voteSuccess = function () {
+  $('.alert-success').removeClass('hide')
+  $('.alert-success').text('Survey voted Successfully!')
+  $('#create-item').trigger('reset')
+  $('#create-item').addClass('hide')
+}
+
 // Feedbacks user about an error.
 const failure = function (data) {
   $('.alert-danger').removeClass('hide')
@@ -92,5 +99,6 @@ module.exports = {
   showUpdateItemBar,
   updateItemSuccess,
   deleteItemSuccess,
+  voteSuccess,
   failure
 }

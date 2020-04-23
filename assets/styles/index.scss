@@ -24,3 +24,16 @@ h1 {
   margin: 21px ;
   text-align: center;
 }
+
+section {
+  background-color: #ffffff;
+  border: 6px solid rgba(1, 10, 90, .6);
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 20px;
+  opacity: .75;
+  outline: none;
+  padding: 1rem;
+  overflow: auto;
+  resize: both;
+}
