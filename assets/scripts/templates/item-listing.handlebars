@@ -1,13 +1,19 @@
 {{#each surveys as |survey|}}
- <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all">
+ <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all survey-listing">
     <h2>{{survey.title}}</h2>
     <p> Question: {{survey.question}}</p>
 
 
-  <form>
+  <form class="survey-select">
+    <div>
     <input type="radio" name="{{survey._id}}" value="{{survey.options.[0]}}"> {{survey.options.[0]}}
+    </div>
+    <div>
     <input type="radio" name="{{survey._id}}" value="{{survey.options.[1]}}"> {{survey.options.[1]}}
+    </div>
+    <div>
     <input type="radio" name="{{survey._id}}" value="{{survey.options.[2]}}"> {{survey.options.[2]}}
+    </div>
     <button type="submit" value="submit" class="btn btn-warning take-survey">Submit </button>
   </form>
 

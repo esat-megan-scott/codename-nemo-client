@@ -16,6 +16,19 @@ body {
   justify-content: center;
 }
 
+.survey-listing {
+  display: flex;
+  flex-direction: column;
+}
+
+.survey-select {
+  font-size: 125%;
+}
+
+.take-survey {
+  margin-top: 10px;
+}
+
 h1 {
   color: white;
   font-family: 'Bad Script', cursive;

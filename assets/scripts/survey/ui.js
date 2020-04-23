@@ -10,7 +10,7 @@ const showMyResultsTemplate = require('../templates/result-listing.handlebars')
 // Store all surveys and show them to the user with related html.
 const showItemsSuccess = function (data) {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Surveys showing Successfully!')
+  $('.alert-success').text('Surveys showing successfully!')
   $('#create-item').addClass('hide')
   $('#content').removeClass('hide')
   $('#content').text(' ')
@@ -65,7 +65,7 @@ const showAfterVoteItemsSuccess = function (data, surveyId) {
 // Store all the surveys which is creadted by user and show them to the user with related html.
 const showMyItemsSuccess = function (data) {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Surveys showing Successfully!')
+  $('.alert-success').text('Surveys showing successfully!')
   $('#create-item').addClass('hide')
   $('#content').removeClass('hide')
   $('#content').text(' ')
@@ -80,15 +80,16 @@ const showMyItemsSuccess = function (data) {
 // Feedbacks user and create a new list.
 const createItemSuccess = function (data) {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Survey created Successfully!')
+  $('.alert-success').text('Survey created successfully!')
   $('#create-item').trigger('reset')
   $('#create-item').addClass('hide')
+  $('#create-survey-modal').modal('hide')
 }
 
 // Delete list, feedbacks user and shows all the remaining lists of signed-in user.
 const deleteItemSuccess = function (data) {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Survey deleted Successfully!')
+  $('.alert-success').text('Survey deleted successfully!')
   $('#create-item').addClass('hide')
   $('#content').removeClass('hide')
   $('#content').text(' ')
@@ -111,7 +112,7 @@ const showUpdateItemBar = function (id) {
 // Updates the related lists with list id and shows all lists of signed-in user.
 const updateItemSuccess = function (data) {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Survey updated Successfully!')
+  $('.alert-success').text('Survey updated successfully!')
   $('#create-item').addClass('hide')
   $('#content').removeClass('hide')
   $('#content').text(' ')
@@ -124,7 +125,7 @@ const updateItemSuccess = function (data) {
 
 const voteSuccess = function () {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Survey voted Successfully!')
+  $('.alert-success').text('Voted successfully!')
   $('#create-item').trigger('reset')
   $('#create-item').addClass('hide')
 }
@@ -132,7 +133,7 @@ const voteSuccess = function () {
 // Feedbacks user about an error.
 const failure = function (data) {
   $('.alert-danger').removeClass('hide')
-  $('.alert-danger').text('Uh! There is an error here! Please try again later :)')
+  $('.alert-danger').text('Uh oh! There is an error here! Please try again later :)')
 }
 
 module.exports = {

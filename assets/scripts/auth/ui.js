@@ -29,6 +29,7 @@ const signInSuccess = function (data) {
   $('.item-group').removeClass('hide')
   $('.info').addClass('hide')
   $('#sign-in-modal').modal('hide')
+  $('.navbar-expand-lg').hide('')
   store.user = data.user
   $('#sign-in').trigger('reset')
 }
@@ -50,6 +51,7 @@ const signOutSuccess = function () {
   $('#sib').removeClass('hide')
   $('#create-item').addClass('hide')
   $('.info').removeClass('hide')
+  $('.navbar-expand-lg').show('')
 }
 
 const signOutFailure = function () {
@@ -61,6 +63,7 @@ const changePasswordSuccess = function () {
   $('.alert-success').removeClass('hide')
   $('.alert-success').text('Password changed')
   $('#change-password').trigger('reset')
+  $('#change-password-modal').modal('hide')
 }
 
 const changePasswordFailure = function () {
