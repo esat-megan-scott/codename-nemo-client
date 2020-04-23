@@ -89,7 +89,7 @@ const onVote = function (event) {
     .then(ui.voteSuccess)
     .then(function () {
       api.showItems()
-        .then(ui.showItemsSuccess)
+        .then(data => ui.showAfterVoteItemsSuccess(data, surveyId))
     })
     .catch(ui.failure)
 }
