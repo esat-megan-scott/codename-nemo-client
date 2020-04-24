@@ -6,7 +6,7 @@ const store = require('../store.js')
 // Lovely api codes which are related with their names but bec. of an last
 // update Items means lists here.
 
-// Shows all the lists of signed-in user.
+// Shows the surveys.
 const showItems = function () {
   return $.ajax({
     url: config.apiUrl + '/surveys',
@@ -17,6 +17,7 @@ const showItems = function () {
   })
 }
 
+// Shows the surveys of signed-in user.
 const showMyItems = function () {
   return $.ajax({
     url: config.apiUrl + '/surveys',
@@ -27,7 +28,7 @@ const showMyItems = function () {
   })
 }
 
-// Creates new list for signed-in user.
+// Creates new survey for signed-in user.
 const createItem = function (data, options) {
   return $.ajax({
     url: config.apiUrl + '/surveys',
@@ -39,7 +40,7 @@ const createItem = function (data, options) {
   })
 }
 
-// Deletes the created List of signed-in user.
+// Deletes the created survey of signed-in user.
 const deleteItem = function (id) {
   return $.ajax({
     url: config.apiUrl + '/surveys/' + id,
@@ -50,7 +51,7 @@ const deleteItem = function (id) {
   })
 }
 
-// Updates the created List of signed-in user.
+// Updates the created surveys of signed-in user.
 const updateItem = function (id, data) {
   return $.ajax({
     url: config.apiUrl + '/surveys/' + id,
@@ -62,6 +63,7 @@ const updateItem = function (id, data) {
   })
 }
 
+// votes for the created any survey
 const vote = function (surveyId, radio) {
   return $.ajax({
     url: config.apiUrl + '/answers',

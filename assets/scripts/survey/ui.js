@@ -62,7 +62,7 @@ const showMyItemsSuccess = function (data) {
   $('.content').append(showMySurveysHtml)
 }
 
-// Feedbacks user and create a new list.
+// Feedbacks user and create a new survey.
 const createItemSuccess = function (data) {
   $('.alert-success').removeClass('hide')
   $('.alert-success').text('Survey created successfully!')
@@ -71,7 +71,7 @@ const createItemSuccess = function (data) {
   $('#create-survey-modal').modal('hide')
 }
 
-// Delete list, feedbacks user and shows all the remaining lists of signed-in user.
+// Delete survey, feedbacks user and shows all the remaining surveys of signed-in user.
 const deleteItemSuccess = function (data) {
   $('.alert-success').removeClass('hide')
   $('.alert-success').text('Survey deleted successfully!')
@@ -85,7 +85,7 @@ const deleteItemSuccess = function (data) {
   $('.content').append(showMySurveysHtml)
 }
 
-// Loads the update html into the related list are on show lists page.
+// Loads the update html into the related survey are on show mysurveys page.
 const showUpdateItemBar = function (id) {
   // console.log(id)
   const targetSurvey = store.surveys.find(survey => survey._id === id)
@@ -94,7 +94,7 @@ const showUpdateItemBar = function (id) {
   $(`#survey${id}`).html(showItemsUpdateHtml)
 }
 
-// Updates the related lists with list id and shows all lists of signed-in user.
+// Updates the related survey with survey id and shows all surveys of signed-in user.
 const updateItemSuccess = function (data) {
   $('.alert-success').removeClass('hide')
   $('.alert-success').text('Survey updated successfully!')
