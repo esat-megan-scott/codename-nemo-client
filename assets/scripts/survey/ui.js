@@ -22,25 +22,12 @@ const showItemsSuccess = function (data) {
 
 const showAfterVoteItemsSuccess = function (data, surveyId) {
   store.surveys = data.surveys
-  console.log(store.surveys, ' survey has ')
-  console.log(store.surveys[7]._id, ' survey 7 ')
-  // const id = store.survyes // this is totally wrong, it should be smthng else
-  // console.log(id, ' aa ')
   const id = store.surveys.findIndex(survey => survey._id === surveyId)
-  console.log(id, ' target is ')
-  // console.log(id, ' id')
-  // console.log(store.user, ' store has a user like that ')
-  // console.log(data, ' data in show')
-  // console.log(data.surveys, ' data has surveys ')
-  // console.log(data.surveys[id].answer, ' answers for 7th survey')
   let opt0 = 0
   let opt1 = 0
   let opt2 = 0
-  // console.log(data.surveys[7].answer.length, ' length')
   for (let i = 0; i < data.surveys[id].answer.length; i++) {
     if (data.surveys[id].answer[i].choice === data.surveys[id].options[0]) {
-      // console.log(data.surveys[7].answer[i].choice, ' in for loop it is the choice')
-      // console.log(data.surveys[7].options[0], ' in for loop it is the options')
       opt0 = opt0 + 1
     } else if (data.surveys[id].answer[i].choice === data.surveys[id].options[1]) {
       opt1 = opt1 + 1
@@ -57,9 +44,7 @@ const showAfterVoteItemsSuccess = function (data, surveyId) {
     survey: data.surveys[id] }
   const showItemsHtml = showMyResultsTemplate({esat: esat})
   $(`#survey${esat.survey._id}`).html(showItemsHtml)
-  console.log(opt0, ' option1 ', opt1, ' option2 ', opt2, ' option3 ')
-  // console.log(data.surveys[7].answer[0].choice, ' data for choice')
-  // console.log(data.surveys[7].options[1], ' data for option1')
+//  console.log(opt0, ' option1 ', opt1, ' option2 ', opt2, ' option3 ')
 }
 
 // Store all the surveys which is creadted by user and show them to the user with related html.
