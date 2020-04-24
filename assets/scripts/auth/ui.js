@@ -57,7 +57,6 @@ const signOutSuccess = function () {
   $('#auth-dd').removeClass('hide')
   $('#surveys-dd').addClass('hide')
   $('#settings-dd').addClass('hide')
-
 }
 
 const signOutFailure = function () {

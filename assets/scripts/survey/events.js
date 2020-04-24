@@ -19,7 +19,7 @@ const onShowMyItems = function (event) {
     .catch(ui.failure)
 }
 
-// Creates the new list for signed-in user.
+// Creates the new survey for signed-in user.
 const onCreateItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -37,7 +37,7 @@ const onCreateItem = function (event) {
       $('#create-item').trigger('reset'))
 }
 
-// Deletes the list of signed-in user.
+// Deletes the surveys of signed-in user.
 const onDeleteItem = function (event) {
   event.preventDefault()
   api.deleteItem($(event.target).data('id'))
@@ -49,7 +49,7 @@ const onDeleteItem = function (event) {
     .catch(ui.failure)
 }
 
-// Loads the update item html into the related list's space at the show lists page.
+// Loads the update survey html into the related survey's space at the show  mysurveys page.
 const onUpdateItemButton = function (event) {
   event.preventDefault()
   console.log(event.target)
@@ -58,7 +58,7 @@ const onUpdateItemButton = function (event) {
   ui.showUpdateItemBar(id)
 }
 
-// Updates the list of signed-in user.
+// Updates the surveys of signed-in user.
 const onUpdateItem = function (event) {
   event.preventDefault()
   const id = $(event.target).data('id')
@@ -80,6 +80,7 @@ const onUpdateItem = function (event) {
     .catch(ui.failure)
 }
 
+// allow users to vote and see the results for voted survey
 const onVote = function (event) {
   event.preventDefault()
   const surveyId = $(event.target).closest('section').data('id')
@@ -94,14 +95,6 @@ const onVote = function (event) {
     })
     .catch(ui.failure)
 }
-
-// event.preventDefault()
-//   const surveyId = $(event.target).closest('article').data('id')
-//   const radioValue = $(`input[name='${surveyId}']:checked`).val()
-//   api.takeSurvey(surveyId, radioValue)
-//     .then(() => onGetSurveys(event))
-//     .then(ui.takeSurveySuccess)
-//     .catch(ui.takeSurveyFailure)
 
 // handlebars
 const addHandlers = () => {

@@ -3,11 +3,13 @@
     <h2>{{survey.title}}</h2>
     <p>{{survey.question}}</p>
 
-    <ol>
-      <li>{{survey.options.[0]}}</li>
-      <li>{{survey.options.[1]}}</li>
-      <li>{{survey.options.[2]}}</li>
-    </ol>
+    <ul>
+      <li>Option 1: {{survey.options.[0]}}</li>
+      <br>
+      <li>Option 2: {{survey.options.[1]}}</li>
+      <br>
+      <li>Option 3: {{survey.options.[2]}}</li>
+    </ul>
   <button data-id="{{survey._id}}" class='btn btn-success' data-toggle="modal" data-target="#update-survey-button"> Update Survey </button>
   <button data-id="{{survey._id}}" class='btn btn-danger'> Delete Survey </button>
   </section>
