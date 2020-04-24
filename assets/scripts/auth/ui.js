@@ -9,6 +9,7 @@ const signUpSuccess = function () {
   $('.alert-success').text('Signed up successfully')
   // $('#sign-up')[0].reset()
   $('#sign-up').trigger('reset')
+  $('#sign-up-modal').modal('hide')
   // document.getElementById('sign-up').reset()
 }
 
@@ -32,6 +33,7 @@ const signInSuccess = function (data) {
   $('.info').addClass('hide')
   store.user = data.user
   $('#sign-in').trigger('reset')
+  $('#sign-in-modal').modal('hide')
 }
 
 const signInFailure = function () {
