@@ -6,7 +6,7 @@ const store = require('../store')
 
 const signUpSuccess = function () {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Signed-up Successfully!')
+  $('.alert-success').text('Signed up successfully')
   // $('#sign-up')[0].reset()
   $('#sign-up').trigger('reset')
   // document.getElementById('sign-up').reset()
@@ -14,17 +14,20 @@ const signUpSuccess = function () {
 
 const signUpFailure = function () {
   $('.alert-danger').removeClass('hide')
-  $('.alert-danger').text('Error on Sing-up!')
+  $('.alert-danger').text('Error when signing up')
   $('#sign-up').trigger('reset')
 }
 
 const signInSuccess = function (data) {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Signed-in Successfully!')
+  $('.alert-success').text('Signed in successfully')
   $('#sign-out').removeClass('hide')
   $('#cpb').removeClass('hide')
   $('#sub').addClass('hide')
   $('#sib').addClass('hide')
+  $('#auth-dd').addClass('hide')
+  $('#surveys-dd').removeClass('hide')
+  $('#settings-dd').removeClass('hide')
   $('.item-group').removeClass('hide')
   $('.info').addClass('hide')
   store.user = data.user
@@ -33,13 +36,13 @@ const signInSuccess = function (data) {
 
 const signInFailure = function () {
   $('.alert-danger').removeClass('hide')
-  $('.alert-danger').text('Error on Sign-in!')
+  $('.alert-danger').text('Error when signing in')
   $('#sign-in').trigger('reset')
 }
 
 const signOutSuccess = function () {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Signed-out Successfully!')
+  $('.alert-success').text('Signed out successfully')
   $('.item-group').addClass('hide')
   $('#content').addClass('hide')
   $('#sign-out').addClass('hide')
@@ -48,22 +51,28 @@ const signOutSuccess = function () {
   $('#sib').removeClass('hide')
   $('#create-item').addClass('hide')
   $('.info').removeClass('hide')
+  $('.navbar-expand-lg').show('')
+  $('#auth-dd').removeClass('hide')
+  $('#surveys-dd').addClass('hide')
+  $('#settings-dd').addClass('hide')
+
 }
 
 const signOutFailure = function () {
   $('.alert-danger').removeClass('hide')
-  $('.alert-danger').text('Error on Sign-out!')
+  $('.alert-danger').text('Error when signing out')
 }
 
 const changePasswordSuccess = function () {
   $('.alert-success').removeClass('hide')
-  $('.alert-success').text('Password changed Successfully!')
+  $('.alert-success').text('Password changed')
   $('#change-password').trigger('reset')
+  $('#change-password-modal').modal('hide')
 }
 
 const changePasswordFailure = function () {
   $('.alert-danger').removeClass('hide')
-  $('.alert-danger').text('Error on changing password!')
+  $('.alert-danger').text('Failed to change password')
   $('#change-password').trigger('reset')
 }
 

@@ -1,50 +1,22 @@
 {{#each surveys as |survey|}}
-  <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all">
-    <h2>Survey Title: {{limit survey.question 15}}</h2>
-    <ul>
-      <li>Description: {{#if survey.description}}
-      {{survey.description}}
-     {{else}}
-      No description provided.
-    {{/if}}</li>
-    <li>Option One: {{#if survey.option1}}
-      {{survey.option1}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Option Two: {{#if survey.option2}}
-      {{survey.option2}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Option Three: {{#if survey.option3}}
-      {{survey.option3}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Option Four: {{#if survey.option4}}
-      {{survey.option4}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Option Five: {{#if survey.option5}}
-      {{survey.option5}}
-     {{else}}
-     No option added yet.
-    {{/if}}</li>
-    <li>Due date:{{#if survey.due_on}}
-      {{survey.due_on}}
-    {{else}}
-      No due date provided.
-    {{/if}}</li>
-    <li>Complete status: {{#if survey.completed}}
-      {{survey.completed}}
-    {{else}}
-      No complete status provided.
-    {{/if}}</li>
-  </ul>
-  <!-- <button data-id="{{survey._id}}" class='btn btn-success'> Update Survey </button>
-  <button data-id="{{survey._id}}" class='btn btn-danger'> Delete Survey </button> -->
-  </section>
+ <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all survey-listing">
+    <h2>{{survey.title}}</h2>
+    <p> Question: {{survey.question}}</p>
+
+
+  <form class="survey-select">
+    <div>
+    <input type="radio" name="{{survey._id}}" value="{{survey.options.[0]}}"> {{survey.options.[0]}}
+    </div>
+    <div>
+    <input type="radio" name="{{survey._id}}" value="{{survey.options.[1]}}"> {{survey.options.[1]}}
+    </div>
+    <div>
+    <input type="radio" name="{{survey._id}}" value="{{survey.options.[2]}}"> {{survey.options.[2]}}
+    </div>
+    <button type="submit" value="submit" class="btn btn-warning take-survey">Submit </button>
+  </form>
+
+ </section>
 
 {{/each}}

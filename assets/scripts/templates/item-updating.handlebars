@@ -1,41 +1,26 @@
 <form class="survey-update" data-id="{{survey._id}}">
   <form id="create-survey" class="px-4 py-3 hide">
     <div class="form">
-      <label>Survey Question</label>
-      <input type="text" name="survey[question]" placeholder="Title" value="{{survey.question}}">
+      <label>Survey Title</label>
+      <input type="text" name="survey[title]" placeholder="Title" value="{{survey.title}}">
     </div>
     <div class="form">
-      <!-- <label>Description</label>
-      <input type="text" name="survey[description]" class="form-control" placeholder="Description" value="{{survey.description}}">
-    </div> -->
+    <div class="form-group">
+      <label>Survey Question</label>
+      <input type="text" name="survey[question]" placeholder="New Question" class="form-control" value="{{survey.question}}" >
+    </div>
     <div class="form-group">
       <label>Option 1</label>
-      <input type="text" name="survey[option1]" placeholder="New Option" class="form-control" value="{{survey.option1}}" >
+      <input type="text" name="survey[option1]" placeholder="New Option" class="form-control" value="{{survey.options.[0]}}" >
     </div>
     <div class="form-group">
       <label>Option 2</label>
-      <input type="text" name="survey[option2]" placeholder="New Option" class="form-control" value="{{survey.option2}}" >
+      <input type="text" name="survey[option2]" placeholder="New Option" class="form-control" value="{{survey.options.[1]}}" >
     </div>
     <div class="form-group">
       <label>Option 3</label>
-      <input type="text" name="survey[option3]" placeholder="New Option" class="form-control" value="{{survey.option3}}" >
+      <input type="text" name="survey[option3]" placeholder="New Option" class="form-control" value="{{survey.options.[2]}}" >
     </div>
-    <div class="form-group">
-      <label>Option 4</label>
-      <input type="text" name="survey[option4]" placeholder="New Option" class="form-control" value="{{survey.option4}}" >
-    </div>
-    <div class="form-group">
-      <label>Option 5</label>
-      <input type="text" name="survey[option5]" placeholder="New Option" class="form-control" value="{{survey.option5}}" >
-    </div>
-    <!-- <div class="form">
-      <label>Due Date</label>
-      <input type="date" name="survey[due_on]" placeholder="Date" value="{{survey.due_on}}">
-    </div>
-    <div class="form">
-      <label>Complete Status</label>
-      <input type="text" name="survey[completed]" placeholder="Complete Status" value="{{survey.completed}}">
-    </div> -->
-     <button type="submit" class="btn btn-secondary" value="Update-Option!">Submit!</button>
+     <button type="submit" class="btn btn-secondary" value="Update-Option!">Submit</button>
   </form>
 </form>

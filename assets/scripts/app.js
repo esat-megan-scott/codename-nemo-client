@@ -2,6 +2,7 @@
 
 const authEvents = require('./auth/events.js')
 const surveyEvents = require('./survey/events.js')
+// const answerEvents = require('./answer/events.js')
 
 // Pops up the create survey form.
 const cib = function () {
@@ -30,4 +31,7 @@ $(() => {
 
   // surveys related events.
   surveyEvents.addHandlers()
+
+  // // surveys related events.
+  // answerEvents.addHandlers()
 })
