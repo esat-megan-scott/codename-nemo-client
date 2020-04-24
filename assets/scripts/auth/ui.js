@@ -26,10 +26,12 @@ const signInSuccess = function (data) {
   $('#cpb').removeClass('hide')
   $('#sub').addClass('hide')
   $('#sib').addClass('hide')
+  $('#auth-dd').addClass('hide')
+  $('#surveys-dd').removeClass('hide')
+  $('#settings-dd').removeClass('hide')
   $('.item-group').removeClass('hide')
   $('.info').addClass('hide')
   $('#sign-in-modal').modal('hide')
-  $('.navbar-expand-lg').hide('')
   store.user = data.user
   $('#sign-in').trigger('reset')
 }
@@ -52,6 +54,10 @@ const signOutSuccess = function () {
   $('#create-item').addClass('hide')
   $('.info').removeClass('hide')
   $('.navbar-expand-lg').show('')
+  $('#auth-dd').removeClass('hide')
+  $('#surveys-dd').addClass('hide')
+  $('#settings-dd').addClass('hide')
+
 }
 
 const signOutFailure = function () {
