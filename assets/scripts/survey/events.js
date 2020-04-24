@@ -69,6 +69,7 @@ const onUpdateItem = function (event) {
   options.push(data.survey.option3)
   data.survey.options = options
   console.log(options, ' opt')
+  console.log('Data is ', data)
   api.updateItem(id, data)
     .then(
       function () {
