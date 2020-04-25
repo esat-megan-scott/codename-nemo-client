@@ -15,7 +15,6 @@ const showItemsSuccess = function (data) {
   $('#content').removeClass('hide')
   $('#content').text(' ')
   store.surveys = data.surveys
-  // console.log(data.surveys)
   const showItemsHtml = showItemsTemplate({ surveys: data.surveys })
   $('.content').append(showItemsHtml)
 }
@@ -44,7 +43,6 @@ const showAfterVoteItemsSuccess = function (data, surveyId) {
     survey: data.surveys[id] }
   const showItemsHtml = showMyResultsTemplate({esat: esat})
   $(`#survey${esat.survey._id}`).html(showItemsHtml)
-//  console.log(opt0, ' option1 ', opt1, ' option2 ', opt2, ' option3 ')
 }
 
 // Store all the surveys which is creadted by user and show them to the user with related html.
@@ -54,7 +52,6 @@ const showMyItemsSuccess = function (data) {
   $('#create-item').addClass('hide')
   $('#content').removeClass('hide')
   $('#content').text(' ')
-  //  console.log(data, ' is') // data.surveys.owner
   store.surveys = data.surveys
   const id = store.user._id
   const targetSurveys = store.surveys.filter(survey => survey.owner === id)
@@ -87,9 +84,7 @@ const deleteItemSuccess = function (data) {
 
 // Loads the update html into the related list are on show lists page.
 const showUpdateItemBar = function (id) {
-  // console.log(id)
   const targetSurvey = store.surveys.find(survey => survey._id === id)
-  // console.log(targetSurvey)
   const showItemsUpdateHtml = showItemsUpdateTemplate({ survey: targetSurvey })
   $(`#survey${id}`).html(showItemsUpdateHtml)
 }
