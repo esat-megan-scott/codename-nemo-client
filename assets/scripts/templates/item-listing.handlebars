@@ -2,7 +2,10 @@
  <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all survey-listing">
     <h2>{{survey.title}}</h2>
     <p> Question: {{survey.question}}</p>
-
+    {{#if survey.voted}}
+    <p> You voted for this survey </p>
+    <button type="submit" class="btn btn-info" value="Results!">See Results!</button>
+    {{else}}
 
   <form class="survey-select">
     <div>
@@ -16,7 +19,7 @@
     </div>
     <button type="submit" value="submit" class="btn btn-warning take-survey">Submit </button>
   </form>
-
+{{/if}}
  </section>
 
 {{/each}}

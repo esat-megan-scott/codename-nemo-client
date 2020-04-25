@@ -87,6 +87,18 @@ const onVote = function (event) {
     .catch(ui.failure)
 }
 
+// shows the result of the survey which is voted by signed-in user already.
+const forResult = function (event) {
+  event.preventDefault()
+  const surveyId = $(event.target).closest('section').data('id')
+  api.vote(surveyId, ' ')
+    .then(function () {
+      api.showItems()
+        .then(data => ui.showAfterVoteItemsSuccess(data, surveyId))
+    })
+    .catch(ui.failure)
+}
+
 // handlebars
 const addHandlers = () => {
   $('#all-items').on('click', onShowItems)
@@ -96,6 +108,7 @@ const addHandlers = () => {
   $('.content').on('click', '.btn-success', onUpdateItemButton)
   $('.content').on('submit', '.survey-update', onUpdateItem)
   $('.content').on('click', '.btn-warning', onVote)
+  $('.content').on('click', '.btn-info', forResult)
 }
 
 module.exports = {

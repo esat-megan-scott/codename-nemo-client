@@ -14,7 +14,17 @@ const showItemsSuccess = function (data) {
   $('#create-item').addClass('hide')
   $('#content').removeClass('hide')
   $('#content').text(' ')
+  const userId = store.user._id
+  // console.log('user is ', userId)
   store.surveys = data.surveys
+  // const ownerOfAnswer = store.surveys[0].answer.findIndex(answer => answer.owner === userId)
+  for (let i = 0; i < store.surveys.length; i++) {
+    const index = store.surveys[i].answer.findIndex(answer => answer.owner === userId)
+    if (index >= 0) {
+      store.surveys[i].voted = true
+    }
+  }
+  // console.log('owner of answer is ', answeredSurveys)
   const showItemsHtml = showItemsTemplate({ surveys: data.surveys })
   $('.content').append(showItemsHtml)
 }
@@ -37,12 +47,12 @@ const showAfterVoteItemsSuccess = function (data, surveyId) {
   store.opt0 = opt0
   store.opt1 = opt1
   store.opt2 = opt2
-  const esat = {result1: opt0,
+  const results = {result1: opt0,
     result2: opt1,
     result3: opt2,
     survey: data.surveys[id] }
-  const showItemsHtml = showMyResultsTemplate({esat: esat})
-  $(`#survey${esat.survey._id}`).html(showItemsHtml)
+  const showItemsHtml = showMyResultsTemplate({results: results})
+  $(`#survey${results.survey._id}`).html(showItemsHtml)
 }
 
 // Store all the surveys which is creadted by user and show them to the user with related html.

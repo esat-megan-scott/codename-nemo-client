@@ -32,6 +32,7 @@ const signInSuccess = function (data) {
   $('.item-group').removeClass('hide')
   $('.info').addClass('hide')
   store.user = data.user
+  // console.log(store.user, ' user ')
   $('#sign-in').trigger('reset')
   $('#sign-in-modal').modal('hide')
 }
