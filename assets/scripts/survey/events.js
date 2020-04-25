@@ -87,6 +87,7 @@ const onVote = function (event) {
     .catch(ui.failure)
 }
 
+// shows the result of the survey which is voted by signed-in user already.
 const forResult = function (event) {
   event.preventDefault()
   const surveyId = $(event.target).closest('section').data('id')

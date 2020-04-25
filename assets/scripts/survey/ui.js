@@ -18,11 +18,9 @@ const showItemsSuccess = function (data) {
   // console.log('user is ', userId)
   store.surveys = data.surveys
   // const ownerOfAnswer = store.surveys[0].answer.findIndex(answer => answer.owner === userId)
-  const answeredSurveys = []
   for (let i = 0; i < store.surveys.length; i++) {
     const index = store.surveys[i].answer.findIndex(answer => answer.owner === userId)
     if (index >= 0) {
-      answeredSurveys[i] = i
       store.surveys[i].voted = true
     }
   }
