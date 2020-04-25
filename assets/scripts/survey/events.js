@@ -23,14 +23,11 @@ const onShowMyItems = function (event) {
 const onCreateItem = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data, ' data')
-  console.log(data.survey.option1, ' opt1')
   const options = []
   options.push(data.survey.option1)
   options.push(data.survey.option2)
   options.push(data.survey.option3)
   data.survey.options = options
-  console.log(options, ' opt')
   api.createItem(data)
     .then(ui.createItemSuccess)
     .catch(ui.failure,
@@ -52,9 +49,7 @@ const onDeleteItem = function (event) {
 // Loads the update survey html into the related survey's space at the show  mysurveys page.
 const onUpdateItemButton = function (event) {
   event.preventDefault()
-  console.log(event.target)
   const id = $(event.target).data('id')
-  console.log(id)
   ui.showUpdateItemBar(id)
 }
 
@@ -68,8 +63,6 @@ const onUpdateItem = function (event) {
   options.push(data.survey.option2)
   options.push(data.survey.option3)
   data.survey.options = options
-  console.log(options, ' opt')
-  console.log('Data is ', data)
   api.updateItem(id, data)
     .then(
       function () {
@@ -85,8 +78,6 @@ const onVote = function (event) {
   event.preventDefault()
   const surveyId = $(event.target).closest('section').data('id')
   const radio = $(`input[name='${surveyId}']:checked`).val()
-  // console.log(surveyId, ' kk')
-  // console.log(radio, ' rr')
   api.vote(surveyId, radio)
     .then(ui.voteSuccess)
     .then(function () {
