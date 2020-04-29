@@ -1,5 +1,5 @@
 {{#each surveys as |survey|}}
- <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all survey-listing">
+ <section id="survey{{survey._id}}" data-id="{{survey._id}}" class="all col-3 survey-listing">
     <h2>{{survey.title}}</h2>
     <p> Question: {{survey.question}}</p>
     {{#if survey.voted}}
